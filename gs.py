@@ -59,6 +59,31 @@ def simular_propagacao(focos):
             print('RISCO ALTO!')
         else:
             print('RISCO MODERADO')
+
+def gerar_relatorio(focos):
+    total = len(focos)
+
+    print('-- RELATÓRIO--')
+
+    print(f'Total de focos: {total}')
+
+
+def calcular_rota(focos):
+    if len(focos) == 0:
+        print('Nenhum foco registrado')
+        return
+    for foco in focos:
+
+        propagacao = foco['intensidade'] * foco['vento']
+
+        print('\n--- ROTA ---')
+
+        if propagacao > 150:
+            print('Rota principal bloqueada.')
+            print('Nova rota segura ativada.')
+        else:
+            print('Rota segura liberada.')
+            
 while True:
     print('--MENU--')
 
