@@ -30,6 +30,7 @@ def registrar_foco(focos):
     except ValueError:
         print('Erro: digite apenas números válidos.')
 
+
 def listar_focos(focos):
     if len(focos) == 0:
         print('Nenhum foco registrado.')
@@ -60,6 +61,7 @@ def simular_propagacao(focos):
         else:
             print('RISCO MODERADO')
 
+    
 def gerar_relatorio(focos):
     total = len(focos)
 
@@ -83,7 +85,8 @@ def calcular_rota(focos):
             print('Nova rota segura ativada.')
         else:
             print('Rota segura liberada.')
-            
+
+
 while True:
     print('--MENU--')
 
@@ -96,3 +99,25 @@ while True:
     print('6 - Sair')
 
     escolha = input('Qual o requisito: \n(1/2/3/4/5/6): ') 
+
+    match escolha:
+
+        case '0': 
+            print('\nProjeto Agnelo é um sistema inteligente de apoio ao combate \n ' 
+            'a incêndios florestais. O software registra focos ativos, \n ' 
+            'simula a propagação do fogo com base na intensidade e vento, ' 
+            'e auxilia brigadas na definição de rotas seguras.')
+            print('O objetivo é reduzir riscos ambientais e operacionais.')
+
+        case '1':
+            registrar_foco(focos)
+        case '2':
+            listar_focos(focos)
+        case '3':
+            simular_propagacao(focos)
+        case '4':
+            calcular_rota(focos)
+        case '5':
+            gerar_relatorio(focos)
+        case '6':
+            break
