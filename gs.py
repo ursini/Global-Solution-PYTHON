@@ -29,6 +29,36 @@ def registrar_foco(focos):
 
     except ValueError:
         print('Erro: digite apenas números válidos.')
+
+def listar_focos(focos):
+    if len(focos) == 0:
+        print('Nenhum foco registrado.')
+        return
+    for foco in focos:
+
+        print('-- FOCO ATIVO --')
+        print(f'Latitude: {foco["latitude"]}')
+        print(f'Longitude: {foco["longitude"]}')
+        print(f'Intensidade: {foco["intensidade"]}')
+        print(f'Vento: {foco["vento"]} km/h')
+    
+def simular_propagacao(focos):
+
+     if len(focos) == 0:
+        print('Nenhum foco registrado.')
+        return
+
+     for foco in focos:
+
+        propagacao = foco['intensidade'] * foco['vento']
+
+        print('-- SIMULAÇÃO --')
+        print(f'Propagação estimada: {propagacao} metros')
+
+        if propagacao > 150:
+            print('RISCO ALTO!')
+        else:
+            print('RISCO MODERADO')
 while True:
     print('--MENU--')
 
